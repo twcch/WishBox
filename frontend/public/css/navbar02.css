@@ -1,0 +1,38 @@
+
+/*進階變化: 原為透明，下拉後navbar背景顏色變更*/
+.navbar-light .navbar-nav .nav-link {
+    color:aliceblue;
+    font-size: 1.3rem;
+    letter-spacing: 0.05rem;
+    
+}
+
+.dropdown-item {
+    transition: all 0.2s ease-in-out;
+    padding: 7px 15px;
+    text-align: center;
+    border-style: inset;
+    text-align: left;
+    border-bottom: 1px dashed #b6d5d7;
+    color: #396c7e;
+}
+
+.navbar-fixed-top{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+/*narbar 下拉後的背景顏色*/
+nav.nav_down_bg {
+    background-color: #007788;
+  }
+
+/*narbar 透明度 顏色*/
+.navbar {
+    min-height: 70px;
+    transition: all 0.3s;
+    border-bottom: 1px solid transparent;
+    background: rgb(255 213 59 / 0%);
+    
+}
+

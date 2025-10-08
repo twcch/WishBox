@@ -1,0 +1,11 @@
+/*基礎把navbar樣式變化*/
+.navbar-light .navbar-nav .nav-link {
+    color: aliceblue;
+    font-size: 1.3rem;
+    letter-spacing: 0.05rem;
+    
+}
+
+nav.navbar-bgc {
+    background-color: #007788;
+  }

@@ -1,0 +1,65 @@
+  /* 可愛熊熊 start*/
+  .card-img {
+    position: relative;
+  }
+   .square {
+    width: 50px;
+    /* 初始宽度 */
+    height: 50px;
+    /* 初始高度 */
+    background-color: rgba(52, 152, 219, 0.5);
+    /* 初始背景颜色 */
+    transition: width 0.4s, height 0.4s;
+    /* 过渡宽度和高度的动画效果，持续时间为1秒 */
+    transform-origin: bottom right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .square2 {
+    width: 50px;
+    height: 50px;
+    /*方塊的標誌與背景色*/
+    background: url(/img/plus.png) no-repeat center center #0ba29b;
+    background-size: 18px auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+  }
+
+  a:hover .square2 {
+
+    animation: moveBox 0.4s ease-in-out forwards;
+  }
+
+  /*transform bottom  right這些定位，可能要依圖片大小設定有所不同*/
+  @keyframes moveBox {
+    to {
+      transform: translate(50%, 50%);
+      bottom: 50%;
+      right: 50%;
+      border-radius: 50%;
+      /*圓形的外圈顏色*/
+      border: solid rgb(102, 158, 135) 5px;
+    }
+  }
+
+  a:hover .square {
+    width: 100%;
+    /* 悬停时的宽度 */
+    height: 100%;
+    /* 悬停时的高度 */
+  }
+
+  .a-text a {
+    text-decoration: none;
+    color: black
+  }
+
+  .a-text a:hover {
+    text-decoration: none;
+  }
+
+  /* 可愛熊熊 end*/

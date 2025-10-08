@@ -1,0 +1,18 @@
+ /*banner start*/
+ @keyframes zoomOut {
+    from {
+        transform: scale(2);
+        /* 初始大小 */
+    }
+    to {
+    transform: scale(1);
+    /* 目标大小，可以根据需要调整缩放比例 */
+}
+}
+
+.zoom-out-animation {
+     animation: zoomOut 1s ease-in-out;
+    /* 使用关键帧动画，持续时间为0.5秒，可以根据需要调整 */
+}
+
+/*banner end*/

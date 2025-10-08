@@ -1,0 +1,42 @@
+/* 漢堡 start*/
+.activeys .title{
+    font-size: 2em;
+}
+
+.activeys .card .overlay{
+background: #9e66b7ab;
+height: 100%;
+opacity: 0;
+position: absolute;
+text-decoration: none;
+transition: all 0.4s ease 0s;
+width: 100%;
+z-index: 100;
+bottom: 0;
+left: 0;
+right: 0;
+top: 0;
+transform: scale(0);
+-webkit-transform: scale(0);
+transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-webkit-transition: all 0.4s ease-in-out;
+-ms-transition: all 0.4s ease-in-out;
+}
+
+.activeys .card:hover .overlay,.activeys .card a:focus .overlay{
+opacity: 1;
+filter: alpha(opacity=40);
+transform: scale(1);
+-webkit-transform: scale(1);
+}
+
+.activeys .card .overlay .icon {
+color: #fff;
+font-size: 2rem;
+left: 45%;
+position: absolute;
+right: 0;
+top: 42%;
+}
+/* 漢堡 end*/
