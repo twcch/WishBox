@@ -62,7 +62,7 @@
         
         console.log("準備發送登入請求");
         console.log("帳號:", username);
-        console.log("API URL:", "http://localhost:8000/users/login");
+        console.log("API URL:", "http://localhost:8000/users/login/");
         
         const loginData = {
             username: username,
@@ -72,7 +72,7 @@
         console.log("發送資料:", loginData);
          
         $.ajax({
-          url: "http://localhost:8000/users/login",// 後端驗證 API
+          url: "http://localhost:8000/users/login/",// 後端驗證 API
           type: "POST",
           dataType: "json",         
           data: JSON.stringify(loginData),
