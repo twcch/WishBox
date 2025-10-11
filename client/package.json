@@ -1,5 +1,5 @@
 {
-  "name": "wishbox-client",
+  "name": "client",
   "private": true,
   "scripts": {
     "dev": "http-server -p 5500 -c-1 ./"
