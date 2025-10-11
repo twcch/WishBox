@@ -23,4 +23,5 @@ from userapp.views import user_login
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("users/login/", user_login, name="user_login")
+    path("users/register/", user_register, name="user_register")
 ]
