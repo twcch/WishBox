@@ -23,7 +23,7 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "database": "WishBox-Server/db.sqlite3",
+            "database": "server/db.sqlite3",
             "name": "project_sqlite"
         }
     ]
