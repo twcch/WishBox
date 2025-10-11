@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.db import IntegrityError
+from .models import CustomerUser
 
 # Create your views here.
 
@@ -116,6 +118,9 @@ def user_register(request):
                     "last_name": created_user.last_name,
                     "phone_number": created_user.phone_number,
                     "address": created_user.address,
+                    "point": created_user.point,
+                    "date_joined": created_user.date_joined.isoformat() if created_user.date_joined else None,
+                    "is_active": created_user.is_active,
                 }
 
                 return JsonResponse({

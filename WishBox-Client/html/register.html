@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/fontawesome-free-6.7.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap5.min.css">
+    <title>會員註冊</title>
+</head>
+
+<body>
+    <div class="mt-5 d-flex justify-content-center">
+        <div class="row border rounded-2" style="width: 40%;">
+            <div class="col-12 text-center">
+                <h1>會員註冊</h1>
+            </div>
+            <div class="col-6">
+                <label for="username" class="form-label">帳號 *</label>
+                <input id="username" name="username" type="text" class="form-control" placeholder="請輸入帳號">
+            </div>
+            <div class="col-6">
+                <label for="email" class="form-label">電子郵件 *</label>
+                <input id="email" name="email" type="email" class="form-control" placeholder="請輸入電子郵件">
+            </div>
+            <div class="col-6">
+                <label for="password" class="form-label">密碼 *</label>
+                <input id="password" name="password" type="password" class="form-control" placeholder="請輸入密碼">
+            </div>
+            <div class="col-6">
+                <label for="phone_number" class="form-label">手機號碼 *</label>
+                <input id="phone_number" name="phone_number" type="tel" class="form-control" placeholder="請輸入手機號碼">
+            </div>
+            <div class="col-6">
+                <label for="first_name" class="form-label">姓</label>
+                <input id="first_name" name="first_name" type="text" class="form-control" placeholder="請輸入姓氏">
+            </div>
+            <div class="col-6">
+                <label for="last_name" class="form-label">名</label>
+                <input id="last_name" name="last_name" type="text" class="form-control" placeholder="請輸入名字">
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">地址</label>
+                <input id="address" name="address" type="text" class="form-control" placeholder="請輸入地址">
+            </div>
+            <div class="col-4 mt-3 mb-3">
+                <a href="javascript:void(0)" class="btn btn-success" onclick="register()">註冊</a>
+            </div>
+            <div class="col-4 mt-3 mb-3">
+                <a href="login.html" class="btn btn-secondary">返回登入</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/bootstrap5.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function register() {
+            // 獲取表單資料
+            const username = $("#username").val().trim();
+            const email = $("#email").val().trim();
+            const password = $("#password").val().trim();
+            const phone_number = $("#phone_number").val().trim();
+            const first_name = $("#first_name").val().trim();
+            const last_name = $("#last_name").val().trim();
+            const address = $("#address").val().trim();
+            
+            // 驗證必要欄位
+            if (!username) {
+                alert("請輸入帳號");
+                return;
+            }
+            if (!email) {
+                alert("請輸入電子郵件");
+                return;
+            }
+            if (!password) {
+                alert("請輸入密碼");
+                return;
+            }
+            if (!phone_number) {
+                alert("請輸入手機號碼");
+                return;
+            }
+            
+            // 驗證 email 格式
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("請輸入正確的電子郵件格式");
+                return;
+            }
+            
+            console.log("準備發送註冊請求");
+            
+            const registerData = {
+                username: username,
+                email: email,
+                password: password,
+                phone_number: phone_number,
+                first_name: first_name,
+                last_name: last_name,
+                address: address
+            };
+            
+            console.log("發送資料:", registerData);
+             
+            $.ajax({
+                url: "http://localhost:8000/users/register/",
+                type: "POST",
+                dataType: "json",         
+                data: JSON.stringify(registerData),
+                contentType: "application/json; charset=utf-8",
+                timeout: 10000,
+                beforeSend: function() {
+                    console.log("正在發送註冊請求...");
+                },
+                success: function(response, textStatus, xhr) {
+                    console.log("註冊成功!");
+                    console.log("完整回應:", response);
+                    
+                    if (response.success === 200 || xhr.status === 201) {
+                        const userData = response.data;
+                        alert("註冊成功！歡迎 " + userData.username);
+                        console.log("註冊成功，準備跳轉到登入頁面");
+                        window.location.href = "login.html";
+                    } else {
+                        alert("註冊失敗：" + (response.message || response.error || "未知錯誤"));
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log("註冊請求失敗!");
+                    console.log("HTTP狀態碼:", xhr.status);
+                    console.log("完整錯誤回應:", xhr.responseText);
+                    
+                    let errorMessage = "註冊失敗：";
+                    
+                    if (xhr.status === 0) {
+                        errorMessage += "無法連接到伺服器，請檢查網路連線";
+                    } else if (xhr.status === 409) {
+                        // 處理重複資料錯誤
+                        try {
+                            const errorResponse = JSON.parse(xhr.responseText);
+                            errorMessage += errorResponse.error || "資料已存在";
+                        } catch (e) {
+                            errorMessage += "帳號、信箱或手機號碼已存在";
+                        }
+                    } else if (xhr.status === 400) {
+                        try {
+                            const errorResponse = JSON.parse(xhr.responseText);
+                            errorMessage += errorResponse.error || "輸入資料有誤";
+                        } catch (e) {
+                            errorMessage += "輸入資料格式錯誤";
+                        }
+                    } else if (xhr.status === 500) {
+                        errorMessage += "伺服器內部錯誤";
+                    } else {
+                        try {
+                            const errorResponse = JSON.parse(xhr.responseText);
+                            errorMessage += errorResponse.error || error;
+                        } catch (e) {
+                            errorMessage += error + " (狀態碼: " + xhr.status + ")";
+                        }
+                    }
+                    
+                    alert(errorMessage);
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
