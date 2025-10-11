@@ -1,0 +1,30 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "data.twcch.io",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "gcp_postgres_dba",
+            "database": "postgres",
+            "username": "dba",
+            "password": "123456"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "local_postgres_dba",
+            "database": "postgres",
+            "username": "dba",
+            "password": "123456"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "WishBox-Server/db.sqlite3",
+            "name": "project_sqlite"
+        }
+    ]
+}
