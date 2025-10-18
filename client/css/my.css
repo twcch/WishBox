@@ -1,0 +1,342 @@
+/*** 字型相關***/
+    .font-18 {
+        font-size: 18px;
+    }
+
+    .font-20 {
+        font-size: 20px;
+    }
+
+    .font-24 {
+        font-size: 24px;
+    }
+
+    .font-25 {
+        font-size: 25px;
+    }
+
+    .font-28 {
+        font-size: 28px;
+    }
+
+    .font-weight-700 {
+        font-weight: 700;
+    }
+
+    .font-bold-black {
+        color: #000000;
+        font-weight: bold;
+    }
+
+ /*** 顏色***/   
+    .color_1 {
+        color: #0ABFD2
+    }
+
+/***卡片相關 ***/
+
+    /*價格*/
+    .price {
+        color: #C31B1B;
+        font-size: 25px;
+        font-weight: 700;
+    }
+    /*預購*/
+    .is_pre {
+        background-color: #0B7E8A;
+        height: 44px;
+        padding-left: 1%;
+        border-top-right-radius: 20px;
+    }
+    .is_pre_ing {
+        background-color: #45BF3F;
+        height: 44px;
+        padding-left: 1%;
+        border-top-right-radius: 20px;
+    }
+    /*開始*/
+    .is_start {
+        background-color: #0ABFD2;
+        height: 44px;
+        padding-left: 1%;
+        border-top-right-radius: 20px;
+    }
+    /* 剩餘/總共 */
+    .is_reserve {
+        background-color: #FF5B33;
+        height: 44px;
+        padding-left: 1%;
+        border-top-right-radius: 20px;
+    }
+
+    .float_tag {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 75%;
+    }
+
+    .float_tag2 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 40%;
+    }
+
+    .test {
+        height: 80px;
+    }
+    .text-gray {
+        color: #ABABAB
+    }
+    .a-none {
+        text-decoration: none;
+    }
+
+    .nav-link2 {
+        color: #000000;
+        font-weight: bold;
+        font-size: 24px;
+        text-decoration: none;
+    }
+
+    .nav-link2:hover {
+        color: #0ABFD2
+    }
+
+    
+
+   
+
+    .bg-gray {
+        background-color: #DDDDDD;
+    }
+
+
+    /*跑馬燈*/
+    .marquee-simple {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        box-sizing: border-box;
+        /*border: 1px solid #ddd;*/
+        padding: 8px 12px;
+        /*background: #fff;*/
+        color: #fff;
+    }
+
+    .marquee-inner {
+        display: inline-block;
+        padding-left: 100%;
+        /* 文字從容器右側開始 */
+        animation: marquee-simple 30s linear infinite;
+    }
+
+    .marquee-bg {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 向左移動 */
+    @keyframes marquee-simple {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+
+        /* 移動一個自身寬度 */
+    }
+
+    @media screen and (max-width:988px) {
+        .bar {
+            display: none;
+        }
+
+        ;
+
+    }
+
+
+    @media screen and (min-width:988px) {
+        .pd-size {
+            height: 304px;
+        }
+
+        ;
+
+
+    }
+/***banner ***/
+    /*左右箭頭*/
+    .banner-btn-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 5%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+        background: 0 0;
+        filter: var(--bs-carousel-control-icon-filter);
+        border: 0;
+        transition: opacity .15s ease;
+    }
+
+    .banner-btn-next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 5%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0;
+        color: #fff;
+        text-align: center;
+        background: 0 0;
+        filter: var(--bs-carousel-control-icon-filter);
+        border: 0;
+        transition: opacity .15s ease;
+    }
+
+    .circle-blue {
+        background-color: #0ABFD2;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+    }
+
+    .circle-blue:hover {
+        opacity: 0.6;
+    }
+
+    /*底部那一排*/
+    .carousel-indicators [data-bs-target] {
+        width: 10px;
+        height: 10px;
+        margin-right: 1%;
+        border-radius: 50%;
+        /* 圓形 */
+        background-color: #ccc;
+        /* 預設灰色 */
+        transition: all 0.3s ease;
+        /* 平滑過渡 */
+    }
+
+    .carousel-indicators .active {
+        background-color: #0ABFD2;
+        /* 啟用的顏色 */
+        /*
+        width: 10px;
+         可以略大 
+        height: 10px;
+        */
+    }
+   
+/*** 右下懸浮 ****/
+    .fixed-icon {
+        position: fixed;
+        right: 20px;
+        /* 靠右 */
+        bottom: 20px;
+        /* 靠下 */
+        display: flex;
+        flex-direction: column;
+        /* 垂直排列 */
+        gap: 10px;
+        /* 兩個 icon 間距 */
+        z-index: 1000;
+    }
+
+
+/***輪播圖***/
+    .owl-prev-btn,
+    .owl-next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        z-index: 100;
+    }
+    .owl-prev-btn {
+        left: 1%;
+    }
+
+    .owl-next-btn {
+        right: 1%;
+    }
+/*** 購物車:購物數量 ***/
+    .cart-pill {
+        background-color: #0ABFD2;
+        width: 40px;
+        padding: 10% 25%;
+        display: inline-block;
+        border-radius: 4em;
+    }
+/*** FB IG 黑色圓圈背景 ***/
+    .black-cirlce-80 {
+        height: 80px;
+        width: 80px;
+        background-color: #000000;
+        border-radius: 50%;
+    }
+
+/*** 相對位置置中 ***/
+     .p-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+ 
+    
+
+
+/*** 備用工具 ****/
+    .card-box-shadow {
+        box-shadow: 0px 4px 24px #15161e;
+        border: 0;
+    }
+
+    .card-item {
+        text-decoration: none;
+        overflow: hidden;
+    }
+
+    .blur-box {
+        backdrop-filter: blur(3px);
+        /* 模糊背景 */
+        -webkit-backdrop-filter: blur(3px);
+        /* Safari 支援 */
+    }
+
+    .neu-outset {
+        background: #e0e0e0;
+        box-shadow: 6px 6px 12px #bebebe,
+            -6px -6px 12px #ffffff;
+    }
+
+   
+    .bg-img-1 {
+        background-image: url('img/night2.jpg');
+        background-size: cover;
+        background-position: center;
+    }

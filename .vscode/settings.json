@@ -26,5 +26,6 @@
             "database": "server/db.sqlite3",
             "name": "project_sqlite"
         }
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
