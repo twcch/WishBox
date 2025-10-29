@@ -32,6 +32,29 @@
     .color_1 {
         color: #0ABFD2
     }
+    .color_2 {
+        color: #FF5B33
+    }
+ /*** 商品頁***/  
+    .cart_btn{
+        height: 60px;
+        /*width: 300px;*/
+        border: 1px solid #FF5B33;
+        color: #FF5B33;
+        font-weight: 700;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .buy_btn{
+        height: 60px;
+        /*width: 300px;*/
+        background-color: #FF5B33;
+        font-weight: 700;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+    }
 
 /***卡片相關 ***/
 
@@ -305,7 +328,9 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
-
+    .trans-center{
+        transform: translate(-50%, -50%);
+    }
  
     
 

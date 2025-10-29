@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://want1yo.com/images/favicon.png">
+    <link rel="stylesheet" href="/client/css/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <!--bi 圖示庫->安裝 載點 :https://github.com/twbs/icons/releases/tag/v1.11.3-->
+    <link rel="stylesheet" href="/client/css/fontawesome-free-6.7.1/css/all.css" rel="stylesheet"><!-- icon: fa-->
+    <link rel="stylesheet" href="/client/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="/client/carasol/owl.carousel.min.css">
+    <link rel="stylesheet" href="/client/css/my.css">
+    <link rel="stylesheet" href="/client/css/public_se.css">
+
+
+    <title>商品頁</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="fixed-icon">
+        <a href="">
+            <img src="/public/img/btn_charge.png" alt="">
+        </a>
+        <a href="">
+            <img src="/public/img/btn_line.png" alt="">
+        </a>
+        <a href="javascript:void(0)" onclick="GoTop()">
+            <img src="/public/img/btn_gototop.png" alt="">
+        </a>
+
+    </div>
+
+
+    <!--功能列start-->
+    <section id="menu">
+        <nav class="navbar  navbar-expand-lg   fixed-top bg-light border-bottom"><!--透明模糊 blur-box -->
+            <div class="d-block ms-5"></div>
+            <div class="d-block ms-5"></div>
+            <div class="d-block ms-5"></div>
+            <a class="navbar-brand ms-5" href="#"><img class="img-fluid mb-3 test" src="/public/img/logo.png" alt="">
+            </a>
+            <button class="navbar-toggler " style="color:white;background: rgba(0,0,0,0.5); margin-right: 3%;"
+                type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+                aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="offcanvas offcanvas-end " tabindex="-1" id="navbarOffcanvasLg"
+                aria-labelledby="navbarOffcanvasLgLabel">
+                <div class="offcanvas-header">
+                    <h2 class="offcanvas-title" id="offcanvasNavbarLabel">選單</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="row ">
+
+                    <div class="col-lg-6">
+                        <ul class="navbar-nav  flex-grow-1 pe-3">
+
+                            <li class="nav-item  mx-3">
+                                <a class="nav-link2 " href="turn.html" title="海賊王" target="" rel="noopener noreferrer">
+                                    預購專區
+                                </a>
+                            </li>
+                            <li class="nav-item  mx-3">
+                                <a class="nav-link2 " href="turn.html" title="妖精尾巴" target="" rel="noopener noreferrer">
+                                    日本一番賞
+                                </a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link2 " href="turn.html" title="我的英雄學院" target=""
+                                    rel="noopener noreferrer">
+                                    GK一番賞
+                                </a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link2 " href="turn.html" title="我的英雄學院" target=""
+                                    rel="noopener noreferrer">
+                                    儲值專區
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <ul class="navbar-nav  justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item   border-end border-dark ">
+                                <a class="nav-link2" href="turn.html" title="登入" target="" rel="noopener noreferrer">
+                                    <i class="fa-regular fa-user"></i>
+                                    <span>會員登入</span>
+
+                                </a>
+
+                            </li>
+
+                            <li class="nav-item ms-1 ">
+                                <a class="nav-link2" href="turn.html" title="註冊" target="" rel="noopener noreferrer">
+                                    註冊
+                                </a>
+
+                            </li>
+                            <li class="nav-item d-none">
+                                <a class="nav-link2" href="turn.html" title="登入" target="" rel="noopener noreferrer">
+                                    <i class="fa-regular fa-user"></i>
+                                    您好,
+                                    <span class="color_1">簡*翎</span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item ms-5 d-none">
+                                <a class="nav-link2" href="turn.html" title="登入" target="" rel="noopener noreferrer">
+                                    <i class="fa-regular fa-user"></i>
+                                    <span class="color_1">1235</span>
+                                    代幣
+
+
+                                </a>
+
+                            </li>
+                            <li class="nav-item  ms-5 ">
+                                <a class="nav-link2" href="turn.html" title="註冊" target="" rel="noopener noreferrer">
+                                    <i class="bi bi-cart"></i>
+                                    <div class="text-light  p-1 font-18 text-center cart-pill d-none">0</div>
+
+                                    購物車
+                                </a>
+                            </li>
+                            <a class="btn btn-danger ms-3 d-none" href="javascript:void(0)">登出</a>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            </div>
+        </nav>
+    </section>
+    <!--功能列end-->
+
+    <div class="mt-3 px-5 container " style="height: 150px;">
+
+    </div>
+    <div class="mt-3 mb-3 px-5  ">
+        <a class=" font-bold-black font-18" href="index.html">首頁 </a>
+        >
+        <a class="a-none font-bold-black font-18" href="index.html">預購專區 </a>
+        >
+        <span class="a-none font-bold-black font-18">商品頁</span>
+
+    </div>
+
+
+    <section id="detail">
+
+        <div class="row  px-lg-5">
+            <!-- 顯示主圖片 -->
+            <div class="col-xl-5 col-lg-5 col-md-5 text-center  ">
+                <!--第一張圖-->
+                <div class="col-md-12 mb-3 position-relative ">
+                    <img class="img-fluid  img-thumbnail zoom_all " src="/public/img/pd01.jpg"
+                        data-zoom-image="/public/img/pd01.jpg" alt="圖檔名稱：1" id="prod_detail_image_main"
+                        style="width: 70%;">
+
+                    <button class="font-28 position-absolute top-50 start-0" onclick="prevSlide()"
+                        style="background-color: rgba(0,0,0,0); border:none;">❮</button>
+                    <button class="font-28 position-absolute top-50 end-0" onclick="nextSlide()"
+                        style="background-color: rgba(0,0,0,0); border:none; ">❯</button>
+                </div>
+
+
+                <!-- 顯示所有圖片(小) -->
+
+
+
+                <div class="row ">
+                    <div class="col-xl-3">
+                        <img class="img-fluid img-thumbnail img-slie" src="/public/img/pd01.jpg" alt="圖檔名稱：1"
+                            onclick="updateMainImage(this)">
+                    </div>
+                    <div class="col-xl-3">
+                        <img class="img-fluid img-thumbnail img-slie" src="/public/img/pd03.jpg" alt="圖檔名稱：2"
+                            onclick="updateMainImage(this)">
+                    </div>
+                    <div class="col-xl-3">
+                        <img class="img-fluid img-thumbnail img-slie" src="/public/img/pd002.jpg" alt="圖檔名稱：3"
+                            onclick="updateMainImage(this)">
+                    </div>
+                    <div class="col-xl-3">
+                        <img class="img-fluid img-thumbnail img-slie" src="/public/img/pd01.jpg" alt="圖檔名稱：4"
+                            onclick="updateMainImage(this)">
+                    </div>
+                    <div class="col-xl-3">
+                        <img class="img-fluid img-thumbnail img-slie" src="/public/img/pd03.jpg" alt="圖檔名稱：5"
+                            onclick="updateMainImage(this)">
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-md-7 my-1 px-5">
+
+
+                <div class="row mb-5">
+                    <div class="col-12 font-bold-black font-20 ms-1">【預購】VPBP-021 馴龍高手系列 掌心儲金公仔 沒牙款</div>
+                    <div class="mt-3 price">$11,760</div>
+                    <div class="font-20 text-decoration-line-through text-gray">$15,400</div>
+                    <div class="col-12 font-bold-black font-20 mt-5 ms-1">數量</div>
+                    <div class="col-xl-4 ">
+                        <div class="row px-3">
+                            <button class=" col-xl-2 border rounded-start font-bold-black font-28"
+                                style="height: 60px; background-color: transparent;" onclick="minus()">-</button>
+
+                            <input type="text" value="1" id="num" name="num" class="col-xl-8 border text-center font-bold-black font-20"
+                                style="height: 60px;">
+                            <button class=" col-xl-2 border rounded-end font-bold-black font-28"
+                                style="height: 60px; background-color: transparent;" onclick="plus()">＋</button>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-4 mt-3">
+                            <div class="cart_btn text-center  d-flex align-items-center justify-content-center rounded">
+                                加入購物車</div>
+                        </div>
+                        <div class="col-lg-4 mt-3">
+                            <div class="buy_btn text-center  d-flex align-items-center justify-content-center rounded">
+                                立即購買
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <hr>
+                <div class="mt-5 font-20 font-bold-black">
+                    付款方式 信用卡(一次付清) / LINE Pay / Apple Pay / 悠遊付 / ATM付款
+                    <br><br>
+                    運送方式
+                    <br><br>
+                    商品編號 0003234
+                    <br><br>
+                    商品規格 約L10.6 x W14.9 x H12.4 cm
+                </div>
+                <div class="mt-5 mb-3 btn font-18 font-bold-black" style="background: #CCCCCC;">注意事項</div>
+                <div class=" font-20 font-bold-black">
+                    ※ 包裹開箱前務必全程錄影開箱過程。<br>
+                    ※ 如遇商品問題需請協助提供開箱影片。<br>
+                    建議售價：1,199元<br>
+                    參考預購價：1,079元<br>
+                    預計發貨日：2025年第四季<br>
+                    實際發貨日需依原廠發貨為主<br>
+                    下單即表示同意商品頁之預購須知，無法取消訂單<br>
+                    本預購商品係本公司依據您的訂單向廠商訂購<br>
+                    無法接受您預購後要求退款或取消訂單<br>
+                    下單後之可收貨日期無需於備註填寫，商品實際到貨日需依原廠發貨日為主
+                </div>
+
+            </div>
+        </div>
+        <div class="mt-5 px-5">
+            <h2> 詳細說明</h2>
+            <hr>
+            <div class="font-20 font-bold-black">
+                《馴龍高手》超人氣角色「沒牙」兇萌登場！<br>
+                野獸國掌心級「Vinyl Piggy Bank」系列再推全新作品，首發便是《馴龍高手》中備受喜愛的夜煞「無牙<br>
+                」！這次帥氣英勇的牠化身Q版造型存錢筒，以兇萌神態成為你日常的儲金好夥伴。<br><br><br>
+
+                此款掌心級存錢筒高約12公分，選用高品質搪膠材質製成，手感滑順細膩，外形設計細節滿載。不僅重現<br>
+                無牙標誌性的鱗片紋理與靈動大眼，背後的小翅膀也雕刻得立體分明。尾部更細緻還原《馴龍高手1》結<br>
+                局中，小嗝嗝為無牙重新量身打造的紅色尾翼，象徵著一人一龍的深厚情誼，也讓本商品更具收藏價值。<br><br><br>
+
+                除可愛外型，背後更設有投幣孔兼具實用功能，無論是送禮或個人收藏，都能為生活增添溫暖與笑意~<br>
+                現在就把無牙帶回家，讓牠成為你的守財小夥伴，每天陪你守護好心情 。
+            </div>
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <div class="text-center">
+                        <img class="img-fluid" src="/public/img/d01.png" alt="">
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <div class="text-center">
+                        <img class="img-fluid" src="/public/img/detail01.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <div class="text-center">
+                        <img class="img-fluid" src="/public/img/detail02.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <div class="text-center">
+                        <img class="img-fluid" src="/public/img/detail03.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <div class="text-center">
+                        <img class="img-fluid" src="/public/img/detail04.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <div class="text-center">
+                        <img class="img-fluid" src="/public/img/detail05.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <div class="text-center">
+                        <img class="img-fluid" src="/public/img/d02.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="contact" class="mt-5 bg-gray">
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-10">
+                <div class="row ">
+                    <div class="col-lg-2">
+                        <img class="img-fluid" src="/public/img/footer_logo.png" alt="">
+                    </div>
+                    <div class="col-lg-8 mb-5">
+                        <div class="h-50 d-flex align-items-end font-bold-black font-20">
+                            <a class="nav-link2" href="#">交易說明</a> | 
+                            <a class="nav-link2" href="#">常見問題</a> | 
+                            <a class="nav-link2" href="#">聯絡我們</a> | 
+                            <a class="nav-link2" href="#">服務條款</a> | 
+                            <a class="nav-link2" href="#">隱私權政策</a>
+
+
+                        </div>
+                        <div class="row h-50 mt-4 d-flex align-items-end">
+                            <div class="col-md-4">
+                                客服電話 0801231234
+                            </div>
+                            <div class="col-md-4">
+                                客服時間 周一至周日 9:00-18:00
+                            </div>
+                            <div class="col-md-4">
+                                統一編號 0000000001
+                            </div>
+                            <div class="col-md-6 ">
+                                玥球人玩具股份有限公司版權所有@2025
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-2 d-flex align-items-center justify-content-center ">
+                        <a href="#">
+                            <div class="position-relative black-cirlce-80">
+                                <i class="fa-brands fa-facebook-f display-5 p-center text-light"></i>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="position-relative black-cirlce-80 ms-5">
+                                <i class="bi bi-instagram display-5 p-center text-light"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    </div>
+    <script src="/client/js/bootstrap5.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/client/carasol/owl.carousel.min.js"></script>
+    <script src="/client/js/jquery.elevatezoom.min.js"></script><!--局部放大套件-->
+    <script src="/client/js/common.js"></script>
+    <script>
+
+        const slides = document.querySelectorAll('.img-slie');
+        const mainImage = document.getElementById('prod_detail_image_main');
+        let currentIndex = 0;
+        updateMainImage(slides[currentIndex]);
+
+        function updateMainImage(imgElement) {
+            var mainImage = document.getElementById('prod_detail_image_main');
+            
+            mainImage.src = imgElement.src;
+        }
+
+
+
+        function nextSlide() {
+
+            currentIndex = (currentIndex + 1) % slides.length;
+
+            updateMainImage(slides[currentIndex]);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateMainImage(slides[currentIndex]);
+
+        }
+
+        function plus(){
+            let num=$("#num").val();
+            num=parseInt(num);
+            $("#num").val(num+1);
+        }
+
+        function minus(){
+            let num=$("#num").val();
+            num=parseInt(num);
+            num=num-1;
+            if(num<1){
+                alert("不可小於1");
+            }else{
+                $("#num").val(num);
+            }
+            
+        }
+    </script>
+
+</body>
+
+</html>
