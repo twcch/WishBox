@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://want1yo.com/images/favicon.png">
+    <link rel="stylesheet" href="/client/css/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <!--bi 圖示庫->安裝 載點 :https://github.com/twbs/icons/releases/tag/v1.11.3-->
+    <link rel="stylesheet" href="/client/css/fontawesome-free-6.7.1/css/all.css" rel="stylesheet"><!-- icon: fa-->
+    <link rel="stylesheet" href="/client/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="/client/carasol/owl.carousel.min.css">
+    <link rel="stylesheet" href="/client/css/my.css">
+
+
+    <title>日本一番賞</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div id="common">
+        <navbar-section></navbar-section>
+        <banner-section></banner-section>
+        <div class="container mt-5">
+             <a class=" font-bold-black font-20" href="#">首頁</a> 
+             <span class=" font-bold-black font-20">> 日本一番賞</span>    
+        </div>
+        <carasol-section></carasol-section>
+        <fixed-section></fixed-section>
+    </div>
+
+        <section id="japan" class="mt-5 container">
+
+            <div class="row ">
+                <h2 class="font-28 font-bold-black d-flex align-items-center">
+                    <img class="img-fluid me-3" src="/public/img/icon_moon.png" alt="">
+                    日本一番賞
+                </h2>
+
+                <div class="mt-3">
+
+                    <a class="font-20 font-bold-black a-none me-3 "
+                        :class="{'rounded-pill btn border-dark':item==current_type}" @click="type_change(item)"
+                        href="javascript:void(0)" v-for="(item,key) in type">{{item}}</a>
+
+
+                </div>
+                <div class="col-lg-3 mt-5" v-for="(item,key) in type_filter">
+                    <a href="" class="a-none ">
+                        <div class="card h-100 ">
+                            <div class="card-head position-relative">
+                                
+                                <div :class="item.tag_type" class=" text-light font-20 font-weight-700 d-flex align-items-center">
+                                    <img v-if="item.tag_type == 'tag_red'" src="/public/img/icon_draw.png">{{item.num}}
+                                </div>
+                                
+                                <img :src="'/public/img/'+item.img" class="card-img-top w-100 pd-size" alt="...">
+
+                            </div>
+                            <div class="card-body ">
+                                <div class="card-text font-20 font-bold-black">
+                                    {{item.title}}
+                                </div>
+                                <span class="mt-3 price">{{item.price1}}</span>
+                                <span
+                                    class="ms-3 mt-3 font-20 text-decoration-line-through text-gray">{{item.price2}}</span>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+
+    <div id="footer">
+        <footer-section></footer-section>
+    </div>
+
+
+
+
+    
+
+
+   
+    <script src="/client/js/bootstrap5.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/client/carasol/owl.carousel.min.js"></script>
+    <script src="/client/js/common.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        
+     /*** carasol data***/
+        const caraso_title = "新品推薦"
+        const carasols = [
+            {
+                tag_title: "50/81",
+                tag_type: "tag_red",
+                title: "【預購】SUNRISEPOP 膽大黨 絨毛 高速婆婆(貓版)金球金球金球",
+                img: "pd01.jpg",
+                price: "$11,760",
+                ex_price: "$15,400",
+                link: "#"
+            },
+            {
+                tag_title: "50/81",
+                tag_type: "tag_red",
+                title: "【123",
+                img: "pd02.jpg",
+                price: "$11,760",
+                ex_price: "$15,400",
+                link: "#"
+            },
+            {
+                tag_title: "50/81",
+                tag_type: "tag_red",
+                title: "【預購】SUNRISEPOP 膽大黨 絨毛 高速婆婆(貓版)with金球",
+                img: "pd03.jpg",
+                price: "$11,760",
+                ex_price: "$15,400",
+                link: "#"
+            },
+            {
+                tag_title: "50/81",
+                tag_type: "tag_red",
+                title: "【預購】SUNRISEPOP 膽大黨 絨毛 高速婆婆(貓版)with金球",
+                img: "pd04.jpg",
+                price: "$11,760",
+                ex_price: "$15,400",
+                link: "#"
+            },
+            {
+                tag_title: "50/81",
+                tag_type: "tag_red",
+                title: "【預購】SUNRISEPOP 膽大黨 絨毛 高速婆婆(貓版)with金球",
+                img: "pd01.jpg",
+                price: "$11,760",
+                ex_price: "$15,400",
+                link: "#"
+            },
+        ]
+
+        /*** banner data***/
+        const banners = [
+            "banner02.png", "banner02.png", "banner02.png","banner02.png"
+        ]
+
+        
+
+
+        /*** pd分類 ***/
+        const type = [
+            "全部", "七龍珠", "海賊王", "火影忍者", "鬼滅之刃"]
+
+        const list_japan = [
+            {
+                title: "七龍珠",
+                tag_type:"tag_red",
+                num: "50/81",
+                img: "pd01.jpg",
+                price1: "$11,760",
+                price2: "$15,400",
+                type: "七龍珠"
+
+            },
+            {
+                title: "海賊王",
+                tag_type:"tag_red",
+                num: "50/81",
+                img: "pd002.jpg",
+                price1: "$11,760",
+                price2: "$15,400",
+                type: "海賊王"
+
+            },
+            {
+                title: "火影忍者",
+                tag_type:"tag_red",
+                num: "50/81",
+                img: "pd03.jpg",
+                price1: "$11,760",
+                price2: "$15,400",
+                type: "火影忍者"
+
+            },
+            {
+                title: "鬼滅之刃",
+                tag_type:"tag_red",
+                num: "50/81",
+                img: "pd04.jpg",
+                price1: "$11,760",
+                price2: "$15,400",
+                type: "鬼滅之刃"
+
+            },
+
+        ];
+
+        
+
+        //物件
+        const japan = {
+            data() {
+                return {
+                    type: type,
+                    list_japan: list_japan,
+                    current_type: "全部",
+
+                }
+            },
+            methods: {
+                type_change(type) {
+                    this.current_type = type
+                }
+            },
+            computed: {
+                // 計算屬性先篩選好
+                type_filter() {
+                    if (this.current_type == "全部") {
+                        return this.list_japan
+                    } else {
+                        return this.list_japan.filter(
+                            (p) => p.type === this.current_type
+                        );
+                    }
+                },
+
+            }
+        }
+
+        //產生物件，掛載至app
+        Vue.createApp(japan).mount("#japan")
+
+    </script>
+    <script src="/client/js/vue_common.js"></script>
+    <script src="/client/js/vue_footer.js"></script>
+</body>
+
+</html>

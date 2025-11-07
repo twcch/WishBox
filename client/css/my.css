@@ -65,40 +65,63 @@
         font-weight: 700;
     }
     /*預購*/
-    .is_pre {
+    .tag_blue {
         background-color: #0B7E8A;
         height: 44px;
         padding-left: 1%;
+        padding-right: 4%;
         border-top-right-radius: 20px;
-    }
-    .is_pre_ing {
-        background-color: #45BF3F;
-        height: 44px;
-        padding-left: 1%;
-        border-top-right-radius: 20px;
-    }
-    /*開始*/
-    .is_start {
-        background-color: #0ABFD2;
-        height: 44px;
-        padding-left: 1%;
-        border-top-right-radius: 20px;
-    }
-    /* 剩餘/總共 */
-    .is_reserve {
-        background-color: #FF5B33;
-        height: 44px;
-        padding-left: 1%;
-        border-top-right-radius: 20px;
-    }
-
-    .float_tag {
         position: absolute;
         left: 0;
         bottom: 0;
         z-index: 1;
-        width: 75%;
+        
     }
+    /*預購中*/
+    .tag_green{
+        background-color: #45BF3F;
+        height: 44px;
+        padding-left: 1%;
+        padding-right: 4%;
+        border-top-right-radius: 20px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    /*開始*/
+    .tag_light_blue {
+        background-color: #0ABFD2;
+        height: 44px;
+        padding-left: 1%;
+        padding-right: 4%;
+        border-top-right-radius: 20px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    /* 剩餘/總共 */
+    .tag_red {
+        background-color: #FF5B33;
+        height: 44px;
+        padding-left: 1%;
+        padding-right: 4%;
+        border-top-right-radius: 20px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+   /* .float_tag {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 70%;
+        
+    }*/
 
     .float_tag2 {
         position: absolute;
@@ -305,6 +328,13 @@
     .owl-next-btn {
         right: 1%;
     }
+
+    .owl-title{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
 /*** 購物車:購物數量 ***/
     .cart-pill {
         background-color: #0ABFD2;
@@ -365,3 +395,13 @@
         background-size: cover;
         background-position: center;
     }
+
+     @media screen and (min-width:988px) {
+       .border-lg-start{
+        border-left: 1px solid #000000
+        }
+
+
+    }
+    
+    
