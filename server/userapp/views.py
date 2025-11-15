@@ -140,3 +140,44 @@ def user_register(request):
             return JsonResponse({"error": f"Unexpected error: {str(e)}"}, status=500)
 
     return JsonResponse({"error": "Only POST method allowed"}, status=405)
+
+@csrf_exempt
+def get_user(request, user_id):
+    if request.method == "GET":
+        try:
+            # 查詢用戶
+            user = CustomerUser.objects.get(id=user_id)
+            
+            # 準備回傳資料
+            user_data = {
+                "id": user.id,
+                "username": user.username,
+                "email": user.email,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "phone_number": user.phone_number,
+                "address": user.address,
+                "point": user.point,
+                "date_joined": user.date_joined.isoformat() if user.date_joined else None,
+                "last_login": user.last_login.isoformat() if user.last_login else None,
+                "is_active": user.is_active,
+                "is_staff": user.is_staff,
+                "is_superuser": user.is_superuser,
+            }
+            
+            return JsonResponse({
+                "success": 200,
+                "message": "User found",
+                "data": user_data
+            }, status=200)
+            
+        except CustomerUser.DoesNotExist:
+            return JsonResponse({
+                "error": f"User with id {user_id} not found"
+            }, status=404)
+        except Exception as e:
+            return JsonResponse({
+                "error": f"Unexpected error: {str(e)}"
+            }, status=500)
+    
+    return JsonResponse({"error": "Only GET method allowed"}, status=405)
