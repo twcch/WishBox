@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",  # 允許跨域
     "userapp",
+    "productapp",
+    "orderapp",
+    "orderitemapp"
 ]
 
 MIDDLEWARE = [
