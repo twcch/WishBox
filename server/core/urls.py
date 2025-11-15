@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path
 
 from userapp.views import user_login, user_register, get_user
-from productapp.views import get_product, get_products, create_product
+from productapp.views import get_product, get_products, create_product, update_product
 
 urlpatterns = [
     path("cp/", admin.site.urls),
@@ -31,4 +31,5 @@ urlpatterns = [
     path("products/<int:product_id>/", get_product, name="get_product"),
     path("products/", get_products, name="get_products"),
     path("products/create/", create_product, name="create_product"),
+    path("products/<int:product_id>/", update_product, name="update_product"),
 ]

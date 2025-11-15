@@ -1,8 +1,8 @@
 import json
 from django.shortcuts import render
-from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.db import IntegrityError
 from .models import Product
 
 # Create your views here.
@@ -158,5 +158,86 @@ def create_product(request):
 
     return JsonResponse({"error": "Only POST method allowed"}, status=405)
 
-# updateProduct
+@csrf_exempt
+def update_product(request, product_id):
+    """
+    更新商品資訊
+    PUT /products/<product_id>/update/
+    """
+    if request.method == "PUT":
+        try:
+            # 1) 檢查商品是否存在
+            try:
+                product = Product.objects.get(id=product_id)
+            except Product.DoesNotExist:
+                return JsonResponse({
+                    "error": f"Product with id {product_id} not found"
+                }, status=404)
+            
+            # 2) 解析 JSON body
+            data = json.loads(request.body.decode('utf-8'))
+            product_name = data.get("product_name", "").strip()
+            description = data.get("description", "").strip()
+            price = data.get("price")
+            image_url = data.get("image_url", "").strip()
+
+            # 3) 驗證並更新欄位
+            if product_name:
+                product.product_name = product_name
+            
+            if description is not None:  # 允許清空描述
+                product.description = description if description else None
+            
+            if price is not None:
+                # 驗證價格格式
+                try:
+                    price = float(price)
+                    if price < 0:
+                        return JsonResponse({"error": "Price must be a positive number"}, status=400)
+                    product.price = price
+                except (ValueError, TypeError):
+                    return JsonResponse({"error": "Invalid price format"}, status=400)
+            
+            if image_url is not None:  # 允許清空圖片 URL
+                product.image_url = image_url if image_url else None
+
+            # 4) 保存更新
+            try:
+                product.save()
+                
+                # 5) 準備回傳資料
+                product_data = {
+                    "id": product.id,
+                    "product_name": product.product_name,
+                    "description": product.description,
+                    "price": str(product.price),
+                    "image_url": product.image_url,
+                    "created_at": product.created_at.isoformat() if product.created_at else None,
+                    "updated_at": product.updated_at.isoformat() if product.updated_at else None,
+                }
+
+                return JsonResponse({
+                    "success": 200,
+                    "message": "Product updated successfully",
+                    "data": product_data
+                }, status=200)
+
+            except IntegrityError as e:
+                return JsonResponse({
+                    "error": f"Failed to update product due to data integrity error: {str(e)}"
+                }, status=400)
+            except Exception as e:
+                return JsonResponse({
+                    "error": f"Failed to update product: {str(e)}"
+                }, status=500)
+
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON format"}, status=400)
+        except Exception as e:
+            return JsonResponse({
+                "error": f"Unexpected error: {str(e)}"
+            }, status=500)
+
+    return JsonResponse({"error": "Only PUT method allowed"}, status=405)
+
 # deleteProduct
