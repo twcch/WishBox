@@ -22,7 +22,7 @@ from userapp.views import user_login, user_register, get_user
 from productapp.views import get_product, get_products, create_product
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("cp/", admin.site.urls),
     # User URLs
     path("users/login/", user_login, name="user_login"),
     path("users/register/", user_register, name="user_register"),
